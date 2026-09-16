@@ -4,8 +4,9 @@ import { ProductCard } from "@/components/ui/ProductCard";
 import { SearchControls } from "./SearchControls";
 import prisma from "@/lib/prisma";
 
-export default async function BuscaPage({ searchParams }: { searchParams: { q?: string } }) {
-  const query = searchParams.q || "";
+export default async function BuscaPage({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
+  const resolvedSearchParams = await searchParams;
+  const query = resolvedSearchParams.q || "";
   
   // Realiza a busca no banco de dados (ignorando case)
   const products = await prisma.product.findMany({

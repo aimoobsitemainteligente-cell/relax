@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/Button";
 import prisma from "@/lib/prisma";
 import { notFound } from "next/navigation";
 
-export default async function ProductDetailsPage({ params }: { params: { slug: string } }) {
+export default async function ProductDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
   const product = await prisma.product.findUnique({
-    where: { slug: params.slug }
+    where: { slug: resolvedParams.slug }
   });
 
   if (!product) {
