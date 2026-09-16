@@ -1,32 +1,22 @@
 import styles from "./page.module.css";
 import { Button } from "@/components/ui/Button";
 import { ProductCard } from "@/components/ui/ProductCard";
+import prisma from "@/lib/prisma";
 
-// Dados mockados baseados no Figma
+// Dados mockados baseados no Figma para Categorias
 const categorias = [
   "Sex Shop", "Conjuntos", "Lingerie", "Lubrificante", "Excitante", 
   "Vibrador", "Fantasia", "Body", "Baby Doll", "Camisola"
 ];
 
-const destaques = [
-  { id: 1, name: "Conjunto Rendado Intense Pink", price: "79,90", installment: "3x de R$ 26,63", qtySelector: false },
-  { id: 2, name: "Bullet Multivelocidades Silk Touch", price: "34,90", installment: "3x de R$ 11,63", qtySelector: true, qty: 1 },
-  { id: 3, name: "Babasoul Hidratante Beijável 150g", price: "42,75", installment: "3x de R$ 14,25", qtySelector: false },
-  { id: 4, name: "Kit Sado Bandage Premium 5 Peças", price: "114,00", installment: "3x de R$ 38,00", qtySelector: true, qty: 2 },
-  { id: 5, name: "Calcinha Personalizada Glam", price: "28,50", installment: "3x de R$ 9,50", qtySelector: false },
-  { id: 6, name: "Sedenta por Tesão Gel Excitante 15ml", price: "14,25", installment: "3x de R$ 4,75", qtySelector: false },
-  { id: 7, name: "Lingerie Rendada Sem Bojo Elegance", price: "56,05", installment: "3x de R$ 18,68", qtySelector: true, qty: 1 },
-  { id: 8, name: "Egg Thunder Stronger Estimulador", price: "38,00", installment: "3x de R$ 12,66", qtySelector: false },
-];
+export default async function Home() {
+  const allProducts = await prisma.product.findMany({
+    orderBy: { createdAt: 'desc' },
+    take: 12
+  });
 
-const ofertas = [
-  { id: 1, name: "Babasoul Hidratante Beijável", oldPrice: "42,75", price: "29,90", discount: "30% OFF" },
-  { id: 2, name: "Conjunto Rendado Luxo - Vermelho", oldPrice: "95,00", price: "66,50", discount: "30% OFF" },
-  { id: 3, name: "Body Lace Noir Elegance", oldPrice: "75,00", price: "52,25", discount: "30% OFF" },
-  { id: 4, name: "Pijama Soft Inverno Conforto", oldPrice: "90,00", price: "57,00", discount: "35% OFF" },
-];
-
-export default function Home() {
+  const destaques = allProducts.slice(0, 8);
+  const ofertas = allProducts.filter(p => p.oldPrice !== null).slice(0, 4);
   return (
     <div className={styles.container}>
       {/* Hero Section */}
@@ -73,8 +63,8 @@ export default function Home() {
             <ProductCard 
               key={item.id}
               name={item.name}
-              price={item.price}
-              badge="full2h"
+              price={item.price.toFixed(2).replace('.', ',')}
+              badge={item.badge || undefined}
             />
           ))}
         </div>
@@ -120,10 +110,10 @@ export default function Home() {
             <ProductCard 
               key={item.id}
               name={item.name}
-              price={item.price}
-              oldPrice={item.oldPrice}
+              price={item.price.toFixed(2).replace('.', ',')}
+              oldPrice={item.oldPrice ? item.oldPrice.toFixed(2).replace('.', ',') : undefined}
               badge="discount"
-              discountLabel={item.discount}
+              discountLabel={item.badge || undefined}
             />
           ))}
         </div>

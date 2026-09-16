@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.linkBack {
+  color: #666;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.linkBack:hover {
+  text-decoration: underline;
+}
+
+.formCard {
+  background-color: white;
+  padding: 32px;
+  border-radius: var(--border-radius-md);
+  border: 1px solid #f0f0f0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.form input, .form select, .form textarea {
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-sm);
+  font-size: 15px;
+  outline: none;
+  font-family: inherit;
+}
+
+.form input:focus, .form select:focus, .form textarea:focus {
+  border-color: var(--primary);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+  padding-top: 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

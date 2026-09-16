@@ -1,27 +1,25 @@
-"use client";
-
-import { useState } from "react";
 import styles from "./page.module.css";
 import { Button } from "@/components/ui/Button";
 import { ProductCard } from "@/components/ui/ProductCard";
-import { MobileFilterDrawer } from "@/components/ui/MobileFilterDrawer";
+import { SearchControls } from "./SearchControls";
+import prisma from "@/lib/prisma";
 
-// Mock data based on Figma search results for "vibrador"
-const SEARCH_RESULTS = [
-  { id: 1, name: "Vibrador Bullet Multivelocidades Silk Touch", price: "34,90", installment: "ou R$ 36,65 em até 3x sem juros" },
-  { id: 2, name: "Vibrador Golfinho Aveludado Sensation", price: "89,90", installment: "ou R$ 94,40 em até 3x sem juros" },
-  { id: 3, name: "Egg Thunder Stronger Estimulador", price: "38,00", installment: "ou R$ 39,90 em até 3x sem juros" },
-  { id: 4, name: "Vibrador Varita Soft Magenta Max", price: "128,00", installment: "ou R$ 134,40 em até 3x sem juros" },
-  { id: 5, name: "Anel Peniano Vibratório Power Glow", price: "29,90", installment: "ou R$ 31,39 em até 3x sem juros" },
-  { id: 6, name: "Vibe Egg sem Fio Controle Remoto", price: "145,00", installment: "ou R$ 152,25 em até 3x sem juros" },
-  { id: 7, name: "Vibrador Líquido Lubrificante Funcional", price: "22,50", installment: "ou R$ 23,62 em até 3x sem juros" },
-  { id: 8, name: "Egg Thunder Stronger Estimulador", price: "38,00", installment: "ou R$ 39,90 em até 3x sem juros" }
-];
+export default async function BuscaPage({ searchParams }: { searchParams: { q?: string } }) {
+  const query = searchParams.q || "";
+  
+  // Realiza a busca no banco de dados (ignorando case)
+  const products = await prisma.product.findMany({
+    where: query ? {
+      OR: [
+        { name: { contains: query, mode: "insensitive" } },
+        { description: { contains: query, mode: "insensitive" } },
+        { category: { contains: query, mode: "insensitive" } }
+      ]
+    } : {},
+    orderBy: { createdAt: "desc" }
+  });
 
-export default function BuscaPage() {
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const query = "vibrador";
-  const totalResults = 15;
+  const totalResults = products.length;
 
   return (
     <div className={styles.container}>
@@ -35,31 +33,25 @@ export default function BuscaPage() {
           <span className={styles.count}>({totalResults} produtos encontrados)</span>
         </div>
         
-        <div className={styles.sortControl}>
-          <label className={styles.desktopSortLabel}>Ordenar por:</label>
-          <select defaultValue="relevancia" className={styles.desktopSortSelect}>
-            <option value="relevancia">Relevância</option>
-            <option value="menor_preco">Menor Preço</option>
-            <option value="maior_preco">Maior Preço</option>
-            <option value="mais_vendidos">Mais Vendidos</option>
-          </select>
-          <button className={styles.mobileFilterBtn} onClick={() => setIsFilterOpen(true)}>
-            Filtros ▾
-          </button>
-        </div>
+        <SearchControls />
       </div>
-      
-      <MobileFilterDrawer isOpen={isFilterOpen} onClose={() => setIsFilterOpen(false)} />
 
       <div className={styles.productGrid}>
-        {SEARCH_RESULTS.map((product) => (
-          <ProductCard 
-            key={product.id}
-            name={product.name}
-            price={product.price}
-            badge="full2h"
-          />
-        ))}
+        {products.length === 0 ? (
+          <div style={{ gridColumn: "1 / -1", padding: "40px", textAlign: "center", color: "#666" }}>
+            Nenhum produto encontrado para "{query}".
+          </div>
+        ) : (
+          products.map((product) => (
+            <ProductCard 
+              key={product.id}
+              name={product.name}
+              price={product.price.toFixed(2).replace('.', ',')}
+              oldPrice={product.oldPrice ? product.oldPrice.toFixed(2).replace('.', ',') : undefined}
+              badge={product.badge || undefined}
+            />
+          ))
+        )}
       </div>
 
       <div className={styles.supportBanner}>

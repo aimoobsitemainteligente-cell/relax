@@ -1,13 +1,23 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Button } from "@/components/ui/Button";
+import prisma from "@/lib/prisma";
+import { notFound } from "next/navigation";
 
-export default function ProductDetailsPage() {
+export default async function ProductDetailsPage({ params }: { params: { slug: string } }) {
+  const product = await prisma.product.findUnique({
+    where: { slug: params.slug }
+  });
+
+  if (!product) {
+    notFound();
+  }
+
   return (
     <div className={styles.container}>
       {/* Breadcrumb */}
       <div className={styles.breadcrumb}>
-        <span>Home</span> &gt; <span>Lingeries</span> &gt; <span className={styles.current}>Conjunto Sensuale Renda Preta</span>
+        <span>Home</span> &gt; <span>{product.category}</span> &gt; <span className={styles.current}>{product.name}</span>
       </div>
 
       <div className={styles.mainGrid}>
@@ -23,20 +33,22 @@ export default function ProductDetailsPage() {
 
         {/* Informações do Produto */}
         <div className={styles.info}>
-          <h1 className={styles.title}>Conjunto Sensuale Renda Preta</h1>
+          <h1 className={styles.title}>{product.name}</h1>
           <div className={styles.reviews}>
             <span className={styles.stars}>★★★★★</span>
-            <span className={styles.reviewCount}>(24 avaliações)</span>
+            <span className={styles.reviewCount}>(0 avaliações)</span>
           </div>
           
           <div className={styles.pricing}>
-            <span className={styles.oldPrice}>R$ 189,90</span>
-            <span className={styles.currentPrice}>R$ 149,90</span>
-            <span className={styles.installment}>ou 6x de R$ 24,98 sem juros</span>
+            {product.oldPrice && (
+              <span className={styles.oldPrice}>R$ {product.oldPrice.toFixed(2).replace('.', ',')}</span>
+            )}
+            <span className={styles.currentPrice}>R$ {product.price.toFixed(2).replace('.', ',')}</span>
+            <span className={styles.installment}>ou 3x de R$ {(product.price / 3).toFixed(2).replace('.', ',')} sem juros</span>
           </div>
 
           <div className={styles.description}>
-            <p>Conjunto elegante em renda antialérgica com detalhes em strappy. Desenvolvido para modelar o corpo com extremo conforto e sensualidade. Não possui bojo, realçando a beleza natural.</p>
+            <p>{product.description}</p>
           </div>
 
           <div className={styles.options}>
