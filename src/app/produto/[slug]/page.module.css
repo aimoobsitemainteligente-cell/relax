@@ -1,0 +1,347 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.breadcrumb .current {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  margin-bottom: 64px;
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  gap: 16px;
+  height: 600px;
+}
+
+.thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 80px;
+}
+
+.thumbPlaceholder {
+  width: 80px;
+  height: 80px;
+  background-color: #f5f5f5;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.thumbPlaceholder:hover {
+  border-color: var(--primary);
+}
+
+.mainImagePlaceholder {
+  flex: 1;
+  background-color: #f5f5f5;
+  border-radius: var(--border-radius-md);
+}
+
+/* Info */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.reviews {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.stars {
+  color: #ffb400;
+  letter-spacing: 2px;
+}
+
+.reviewCount {
+  color: #666;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.oldPrice {
+  font-size: 16px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.currentPrice {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.installment {
+  font-size: 14px;
+  color: #666;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+/* Options */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.optionGroup label {
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.colorOptions {
+  display: flex;
+  gap: 12px;
+}
+
+.colorBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  padding: 0;
+}
+
+.colorBtn.active {
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 0 2px white inset;
+}
+
+.sizeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.sizeGuideBtn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.sizeOptions {
+  display: flex;
+  gap: 12px;
+}
+
+.sizeBtn {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  border-radius: var(--border-radius-sm);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sizeBtn:hover {
+  border-color: var(--primary);
+}
+
+/* Actions */
+.purchaseActions {
+  display: flex;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-sm);
+}
+
+.quantitySelector button {
+  width: 48px;
+  height: 48px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.quantitySelector span {
+  width: 40px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Shipping */
+.shippingCalc {
+  background-color: #fafafa;
+  padding: 24px;
+  border-radius: var(--border-radius-md);
+  margin-top: 16px;
+}
+
+.shippingCalc label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.shippingInputGroup {
+  display: flex;
+  gap: 12px;
+}
+
+.shippingInputGroup input {
+  flex: 1;
+  padding: 0 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-sm);
+  outline: none;
+  font-family: inherit;
+}
+
+.shippingInputGroup input:focus {
+  border-color: var(--primary);
+}
+
+/* Tabs */
+.tabsSection {
+  margin-top: 40px;
+}
+
+.tabHeaders {
+  display: flex;
+  gap: 32px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 32px;
+}
+
+.tabBtn {
+  background: none;
+  border: none;
+  padding: 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  font-family: inherit;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+}
+
+.tabBtn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.tabContent {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.tabContent ul {
+  padding-left: 20px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .gallery {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  
+  .thumbnails {
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .mainImagePlaceholder {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 24px;
+  }
+  
+  .currentPrice {
+    font-size: 28px;
+  }
+  
+  .purchaseActions {
+    flex-direction: column;
+  }
+  
+  .purchaseActions button {
+    width: 100%;
+  }
+
+  .shippingInputGroup {
+    flex-direction: column;
+  }
+  
+  .shippingInputGroup button {
+    width: 100%;
+  }
+  
+  .tabHeaders {
+    gap: 16px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .tabBtn {
+    font-size: 16px;
+  }
+}

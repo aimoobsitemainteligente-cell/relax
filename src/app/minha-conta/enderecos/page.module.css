@@ -1,0 +1,126 @@
+.contentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.titleArea h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.titleArea p {
+  font-size: 14px;
+  color: #666;
+}
+
+.addressGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.addressCard {
+  background-color: var(--surface);
+  border: 1px solid #f0f0f0;
+  border-radius: var(--border-radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.addressTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.addressIcon {
+  font-size: 20px;
+}
+
+.addressTitleGroup h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.badge {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.addressDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.addressDetails p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.cardActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 16px;
+}
+
+.actionBtn {
+  background: none;
+  border: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.actionBtn:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.actionBtnDestructive {
+  background: none;
+  border: none;
+  color: #e53935;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.actionBtnDestructive:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .contentHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}

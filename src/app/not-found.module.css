@@ -1,0 +1,92 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 80px 24px;
+  background-color: #fafafa;
+}
+
+.content {
+  text-align: center;
+  max-width: 500px;
+}
+
+.errorLabel {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.errorCode {
+  font-size: 120px;
+  font-weight: 900;
+  line-height: 1;
+  color: #111;
+  margin-bottom: 24px;
+  letter-spacing: -4px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.btnHome {
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.exploreBox {
+  padding-top: 40px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.exploreBox h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.exploreBox p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.tag {
+  padding: 10px 24px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 100px;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.tag:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background-color: rgba(233, 30, 99, 0.05);
+}

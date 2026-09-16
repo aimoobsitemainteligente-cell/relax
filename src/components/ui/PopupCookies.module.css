@@ -1,0 +1,67 @@
+.cookieBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-top: 1px solid #e0e0e0;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+  z-index: 9998;
+  padding: 24px;
+  animation: slideUpCookie 0.5s ease-out;
+}
+
+@keyframes slideUpCookie {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.content p {
+  font-size: 14px;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.btnConfig {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: #666;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.btnConfig:hover {
+  color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  
+  .actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

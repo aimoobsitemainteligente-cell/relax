@@ -1,0 +1,150 @@
+.contentHeader {
+  margin-bottom: 32px;
+}
+
+.contentHeader h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.formContainer {
+  background-color: var(--surface);
+  border: 1px solid #f0f0f0;
+  border-radius: var(--border-radius-md);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Photo Section */
+.photoSection {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.photoInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.changePhotoBtn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.changePhotoBtn:hover {
+  text-decoration: underline;
+}
+
+.photoHint {
+  font-size: 13px;
+  color: #888;
+}
+
+/* Sections */
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formSection h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 12px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.select {
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-sm);
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--text-dark);
+  background-color: var(--surface);
+  outline: none;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+
+.select:focus {
+  border-color: var(--primary);
+}
+
+/* Checkbox */
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary);
+}
+
+/* Actions */
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .formContainer {
+    padding: 24px 16px;
+  }
+}

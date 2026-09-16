@@ -1,0 +1,173 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  background-color: var(--background);
+}
+
+.announcementBar {
+  background-color: var(--text-dark);
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 60px;
+}
+
+.divider {
+  background-color: #eaeaea;
+  width: 1px;
+  height: 100%;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.passwordGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.forgotPassword {
+  font-size: 13px;
+  color: var(--primary);
+  align-self: flex-end;
+  font-weight: 600;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+.submitBtn {
+  margin-top: 12px;
+  font-weight: 700;
+}
+
+.socialLogin {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.socialDivider {
+  display: block;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.socialDivider::before,
+.socialDivider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 1px;
+  background-color: #eaeaea;
+}
+
+.socialDivider::before {
+  left: 0;
+}
+
+.socialDivider::after {
+  right: 0;
+}
+
+.socialButtons {
+  display: flex;
+  gap: 16px;
+}
+
+.socialBtn {
+  flex: 1;
+  font-weight: 600;
+  border-color: #ddd;
+}
+
+/* Coluna 2 Específicos */
+.passwordRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.checkbox {
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+.link {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin: 40px auto;
+  }
+  
+  .divider {
+    display: none;
+  }
+  
+  .passwordRow {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,175 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #666;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.row {
+  display: flex;
+  gap: 24px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.inputGroup label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.hint {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+input[type="text"] {
+  padding: 14px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-sm);
+  font-size: 15px;
+  outline: none;
+  font-family: inherit;
+}
+
+input[type="text"]:focus {
+  border-color: var(--primary);
+}
+
+.cepBox {
+  display: flex;
+  gap: 12px;
+  max-width: 300px;
+}
+
+.cepBox input {
+  flex: 1;
+}
+
+.btnBuscar {
+  background-color: var(--text-dark);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: 0 24px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btnBuscar:hover {
+  background-color: #111;
+}
+
+.tagsBox {
+  display: flex;
+  gap: 12px;
+}
+
+.tag, .tagActive {
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+}
+
+.tag {
+  background-color: white;
+  color: #666;
+}
+
+.tag:hover {
+  background-color: #f5f5f5;
+}
+
+.tagActive {
+  background-color: rgba(233, 30, 99, 0.1);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.checkboxGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.checkboxGroup input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.checkboxGroup label {
+  font-size: 14px;
+  color: var(--text-dark);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.btnCancel {
+  background-color: transparent;
+  color: var(--text-dark);
+  border: 1px solid #e0e0e0;
+}
+
+.btnCancel:hover {
+  background-color: #fafafa;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .cepBox {
+    max-width: 100%;
+  }
+  
+  .actions {
+    flex-direction: column-reverse;
+  }
+  
+  .actions button {
+    width: 100%;
+  }
+}

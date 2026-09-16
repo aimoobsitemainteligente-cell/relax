@@ -1,0 +1,270 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.pageTitle {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 32px;
+  color: var(--text-dark);
+}
+
+.cartLayout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+/* Items */
+.cartItems {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cartItem {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  background-color: var(--surface);
+  border: 1px solid #f0f0f0;
+  border-radius: var(--border-radius-md);
+}
+
+.itemImagePlaceholder {
+  width: 120px;
+  height: 120px;
+  background-color: #f5f5f5;
+  border-radius: var(--border-radius-sm);
+  flex-shrink: 0;
+}
+
+.itemDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.itemHeader h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.removeBtn:hover {
+  color: #d32f2f;
+  text-decoration: underline;
+}
+
+.itemAttr {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.itemActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-sm);
+}
+
+.quantitySelector button {
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.quantitySelector span {
+  width: 32px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.priceInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.oldPrice {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.currentPrice {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.shippingCalc {
+  background-color: #fafafa;
+  padding: 24px;
+  border-radius: var(--border-radius-md);
+  margin-top: 16px;
+}
+
+.shippingCalc label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.shippingInputGroup {
+  display: flex;
+  gap: 12px;
+  max-width: 300px;
+}
+
+.shippingInputGroup input {
+  flex: 1;
+  padding: 0 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-sm);
+  outline: none;
+  font-family: inherit;
+}
+
+/* Order Summary */
+.orderSummary h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.summaryLine {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  color: #666;
+}
+
+.discount {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+.couponGroup {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.couponGroup input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-sm);
+  outline: none;
+  font-family: inherit;
+}
+
+.totalLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.totalPrice {
+  font-size: 24px;
+  color: var(--primary);
+}
+
+.installments {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.checkoutBtn {
+  margin-bottom: 16px;
+}
+
+.continueShopping {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.continueShopping:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cartLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .cartItem {
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .itemImagePlaceholder {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .itemHeader {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .itemActions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .shippingInputGroup {
+    flex-direction: column;
+    max-width: 100%;
+  }
+  
+  .shippingInputGroup button {
+    width: 100%;
+  }
+}

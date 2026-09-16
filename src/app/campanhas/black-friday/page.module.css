@@ -1,0 +1,451 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  color: white;
+}
+
+.topBanner {
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* Hero */
+.hero {
+  background-image: linear-gradient(to bottom, #111, #000);
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.badgeDiscount {
+  background-color: var(--primary);
+  color: white;
+  padding: 8px 24px;
+  border-radius: 100px;
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 56px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-light);
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.countdown {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.timeBlock {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeNumber {
+  font-size: 32px;
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+}
+
+.timeLabel {
+  font-size: 12px;
+  color: #999;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #bbb;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.heroBtn {
+  font-size: 18px;
+  padding: 20px 40px;
+  border-radius: 100px;
+  background-color: var(--primary);
+}
+
+.heroBtn:hover {
+  background-color: #d11c50;
+}
+
+/* Sections */
+.section {
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sectionDark {
+  background-color: #0a0a0a;
+  padding: 80px 24px;
+  width: 100%;
+}
+
+.innerSection {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle, .sectionTitleLight {
+  font-size: 32px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sectionTitle {
+  color: white;
+}
+
+.sectionTitleLight {
+  color: white;
+}
+
+/* Categories */
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.categoryCard {
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #111;
+  border: 1px solid #222;
+  transition: transform 0.2s;
+}
+
+.categoryCard:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+}
+
+.categoryImage {
+  height: 300px;
+  background-color: #222;
+}
+
+.categoryContent {
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.categoryContent h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: white;
+}
+
+.btnOutline {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 12px 24px;
+  font-weight: 800;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnOutline:hover {
+  background-color: white;
+  color: #000;
+}
+
+/* Products */
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.productCard {
+  background-color: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.productImage {
+  height: 250px;
+  background-color: #222;
+  position: relative;
+}
+
+.discountBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--primary);
+  color: white;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.productInfo {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.productName {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ddd;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.oldPrice {
+  font-size: 14px;
+  color: #666;
+  text-decoration: line-through;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 900;
+  color: white;
+}
+
+.btnBuy {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Promo */
+.promoBox {
+  display: flex;
+  background: linear-gradient(135deg, #111, #1a050c);
+  border: 1px solid var(--primary);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.promoContent {
+  width: 50%;
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.promoTag {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 900;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+.promoContent h2 {
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.promoContent p {
+  font-size: 16px;
+  color: #bbb;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.promoImage {
+  width: 50%;
+  background-color: #222;
+}
+
+/* Benefits */
+.benefitsSection {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 80px 24px;
+}
+
+.benefitCard {
+  text-align: center;
+  padding: 32px 24px;
+  background-color: #111;
+  border-radius: 16px;
+  border: 1px solid #222;
+}
+
+.benefitIcon {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.benefitCard h4 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.benefitCard p {
+  font-size: 14px;
+  color: #999;
+}
+
+/* VIP */
+.vipSection {
+  padding: 80px 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.vipBox {
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 24px;
+  padding: 64px 40px;
+  text-align: center;
+}
+
+.vipBox h2 {
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+.vipBox p {
+  font-size: 16px;
+  color: #bbb;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.vipForm {
+  display: flex;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.vipForm input {
+  flex: 1;
+  padding: 16px 24px;
+  border-radius: 100px;
+  border: 1px solid #444;
+  background-color: #000;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.vipForm input:focus {
+  border-color: var(--primary);
+}
+
+@media (max-width: 1024px) {
+  .categoryGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .promoBox {
+    flex-direction: column;
+  }
+  
+  .promoContent, .promoImage {
+    width: 100%;
+  }
+  
+  .promoImage {
+    height: 300px;
+  }
+  
+  .benefitsSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 40px;
+  }
+  
+  .countdown {
+    gap: 12px;
+  }
+  
+  .timeBlock {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .timeNumber {
+    font-size: 24px;
+  }
+  
+  .vipForm {
+    flex-direction: column;
+  }
+}

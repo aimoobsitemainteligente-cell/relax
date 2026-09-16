@@ -1,0 +1,278 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.pageTitle {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 32px;
+  color: var(--text-dark);
+}
+
+.checkoutLayout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+/* Forms Area */
+.checkoutForms {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.formCard h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.fullRow {
+  grid-column: 1 / -1;
+}
+
+/* Shipping Methods */
+.shippingMethods {
+  margin-top: 32px;
+}
+
+.shippingMethods h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.radioOption:hover {
+  border-color: var(--primary);
+}
+
+.radioOption input {
+  width: 20px;
+  height: 20px;
+  margin-right: 16px;
+  accent-color: var(--primary);
+}
+
+.radioContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.shippingTitle {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.shippingDesc {
+  font-size: 13px;
+  color: #666;
+}
+
+.shippingPrice {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Payment Methods */
+.paymentMethods {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.paymentBtn {
+  flex: 1;
+  padding: 16px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-sm);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.paymentBtn:hover {
+  border-color: var(--primary);
+}
+
+.paymentBtn.active {
+  border-color: var(--primary);
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.creditCardForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  background-color: #fafafa;
+  padding: 24px;
+  border-radius: var(--border-radius-md);
+}
+
+.installmentsLabel {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.installmentsSelect {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-sm);
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+}
+
+.installmentsSelect:focus {
+  border-color: var(--primary);
+}
+
+/* Order Summary */
+.orderSummary h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cartItemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.summaryItem {
+  display: flex;
+  gap: 12px;
+}
+
+.summaryThumb {
+  width: 64px;
+  height: 64px;
+  background-color: #f5f5f5;
+  border-radius: var(--border-radius-sm);
+  flex-shrink: 0;
+}
+
+.summaryItemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.summaryItemInfo h4 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.summaryItemInfo p {
+  font-size: 12px;
+  color: #666;
+}
+
+.summaryItemInfo span {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.summaryTotals {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.summaryLine {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-size: 14px;
+}
+
+.totalLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-top: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.totalPrice {
+  font-size: 24px;
+  color: var(--primary);
+}
+
+.installments {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  color: #666;
+}
+
+.securitySeal {
+  text-align: center;
+  font-size: 13px;
+  color: #4caf50;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .checkoutLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .paymentMethods {
+    flex-direction: column;
+  }
+  
+  .creditCardForm {
+    grid-template-columns: 1fr;
+  }
+}

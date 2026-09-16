@@ -1,0 +1,155 @@
+.header {
+  width: 100%;
+  background-color: var(--surface);
+  border-bottom: 1px solid #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+/* Left Group */
+.leftGroup {
+  flex: 1;
+}
+
+.locationBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-dark);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Logo */
+.brandName {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--text-dark);
+  letter-spacing: 2px;
+}
+
+/* Search */
+.searchContainer {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 100px;
+  padding: 4px 16px;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 8px 0;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.searchBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Right Group */
+.rightGroup {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.accountLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-dark);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cartLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-dark);
+}
+
+.cartInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.cartTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+}
+
+.cartPrice {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .locationBtn {
+    display: none;
+  }
+  
+  .leftGroup {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .brandName {
+    font-size: 24px;
+  }
+  
+  .searchContainer {
+    display: none; /* Poderia ir para um header secundário embaixo, mas no figma m01-homepage parece ter uma lupa solta ou estar abaixo. Vamos esconder do Header principal e usar lupa solta */
+  }
+  
+  .accountLink {
+    display: none;
+  }
+  
+  .cartInfo {
+    display: none;
+  }
+  
+  .rightGroup {
+    flex: 1;
+    gap: 16px;
+  }
+}

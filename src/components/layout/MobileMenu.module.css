@@ -1,0 +1,194 @@
+.hamburgerBtn {
+  display: none; /* Escondido no desktop */
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-dark);
+  padding: 8px;
+  margin-left: -8px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 99;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 320px;
+  background-color: white;
+  z-index: 100;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 24px rgba(0,0,0,0.1);
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.brandName {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--text-dark);
+  letter-spacing: 1px;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #666;
+  cursor: pointer;
+}
+
+.drawerContent {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.profileSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.profileSection span {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.navItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-decoration: none;
+  border-bottom: 1px solid #f5f5f5;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+  width: 100%;
+}
+
+.hasSubmenu {
+  color: var(--text-dark);
+}
+
+.active {
+  color: var(--primary);
+}
+
+.chevron {
+  font-size: 20px;
+  font-weight: 400;
+  color: #999;
+}
+
+.submenu {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0 16px 16px;
+  background-color: #fafafa;
+  margin: 0 -24px;
+  padding-left: 40px;
+}
+
+.subItem {
+  padding: 12px 0;
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.badge {
+  background-color: var(--primary);
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+.divider {
+  height: 1px;
+  background-color: #f0f0f0;
+  margin: 32px 0;
+}
+
+.navMenuBottom .navItem {
+  border-bottom: none;
+  padding: 12px 0;
+  color: #666;
+  font-weight: 500;
+}
+
+.logoutBtn {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 0;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburgerBtn {
+    display: block; /* Apenas no mobile */
+  }
+}
